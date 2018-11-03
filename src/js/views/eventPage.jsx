@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 
-export class Single extends React.Component {
+export class EventPage extends React.Component {
 	render() {
 		return (
 			<div className="jumbotron">
@@ -12,10 +12,10 @@ export class Single extends React.Component {
 						return (
 							<h1 className="display-4">
 								This will show the demo element:{" "}
-								{
+								{/*
 									store.demo[this.props.match.params.theid]
 										.title
-								}
+								*/}
 							</h1>
 						);
 					}}
@@ -36,6 +36,6 @@ export class Single extends React.Component {
 	}
 }
 
-Single.propTypes = {
+/*Single.propTypes = {
 	match: PropTypes.object
-};
+};*/

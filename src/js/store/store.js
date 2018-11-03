@@ -1,18 +1,9 @@
 const getState = scope => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			events: [],
+			meetups: [],
+			session: {}
 		},
 		actions: {
 			changeColor: (element, color) => {
