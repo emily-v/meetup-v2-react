@@ -15,22 +15,23 @@ const Store = PassedComponent => {
 			// make sure you're using the store: this.state.store
 
 			// Fetch Events
-			fetch("https://assets.breatheco.de/apis/fake/meetup/events")
+			fetch("https://assets.breatheco.de/apis/fake/meetup/events") // get data as string
 				.then(response => {
 					if (response.status !== 200) {
 						console.log(
-							"Connection error, status " + response.status
+							"Connection error, status " + response.status // check for server/connection errors
 						);
 						return;
 					}
 					response.json().then(data => {
-						let store = this.state.store;
+						// parse string of data to object
+						let store = this.state.store; // store is immutable - need to make copy in order to manipulate
 						store.events = data;
-						this.setState({ store });
+						this.setState({ store }); // re-set state to copy of fetched data
 					});
 				})
 				.catch(err => {
-					console.log("Fetch error: ", err);
+					console.log("Fetch error: ", err); // check for errors related to fetch
 				});
 
 			// Fetch Groups
